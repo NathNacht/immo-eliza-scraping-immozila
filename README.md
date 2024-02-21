@@ -50,8 +50,18 @@ graph TD;
 
 ##  Usage
 
+The project involves discovering and saving the links to the locations of all properties in JSON files. Subsequently, each link undergoes thorough processing to extract the necessary information, which is then transformed into a DataFrame. Finally, the obtained information is written to a CSV file.
+
 ## Visuals
 
+
+
 ##  Contributors
+- [Nathalie Nachtergaele](https://github.com/NathNacht)
+- [Jens Dedeyne](https://github.com/DedeyJ)
+- [Alfiya Khabibullina](https://github.com/justalphie)
+- [Sem Deleersnijder](https://github.com/semdeleer)
 
 ##  Timeline
+
+This project was created in 5 days.
