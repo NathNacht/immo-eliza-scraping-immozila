@@ -6,26 +6,26 @@ This Python project employs web scraping techniques to compile a dataset of real
 
 The outcome of this project provides us with the following headers in our files:
 
-<li>
-    <ul>Property ID</ul>
-    <ul>Locality name</ul>
-    <ul>Postal code</ul>
-    <ul>Price</ul>
-    <ul>Type of property (house or apartment)</ul>
-    <ul>Subtype of property (bungalow, chalet, mansion, ...)</ul>
-    <ul>Type of sale (note: exclude life sales)</ul>
-    <ul>Number of rooms</ul>
-    <ul>Living area (area in m²)</ul>
-    <ul>Equipped kitchen (0/1)</ul>
-    <ul>Furnished (0/1)</ul>
-    <ul>Open fire (0/1)</ul>
-    <ul>Terrace (area in m² or null if no terrace)</ul>
-    <ul>Garden (area in m² or null if no garden)</ul>
-    <ul>Surface of good</ul>
-    <ul>Number of facades</ul>
-    <ul>Swimming pool (0/1)</ul>
-    <ul>State of building (new, to be renovated, ...)</ul>
-</li>
+* Property ID
+* Locality name
+* Postal code
+* Price
+* Type of property (house or apartment)
+* Subtype of property (bungalow, chalet, mansion, ...)
+* Type of sale (note: exclude life sales)
+* Number of rooms
+* Living area (area in m²)
+* Equipped kitchen (0/1)
+* Furnished (0/1)
+* Open fire (0/1)
+* Terrace (area in m² or null if no terrace)
+* Garden (area in m² or null if no garden)
+* Surface of good
+* Number of facades
+* Swimming pool (0/1)
+* State of building (new, to be renovated, ...)
+
+
 ##  Installation
 
 * clone the repo
@@ -39,27 +39,13 @@ $ python3 main.py
 
 ##  Workflow
 
-### threathimmolinks
-```mermaid
-graph TD;
-    A["immo_pagelinks(n)"]-->B[n is the amount of pages];
-    B-->C["multiWeblinks()"];
-    C-->D["write_json(weblinks)"];
-```
-
-### scraper
-```mermaid
-graph TD;
-    A["immo_pagelinks(n)"]-->B[fetch_all_info_from_property()];
-    B-->C["check_sale(property_dict)"];
-    C-->D["data_to_insert_in_dataframe"];
-```
-
 ### main
 ```mermaid
 graph TD;
-    A["multiWeblinks()"]-->B[ write_json(webklinks)];
-    B-->C[" df.to_csv()"];
+    A["multiWeblinks()"]-->B[Will be stored in weblinks];
+    B-->C["PropertyScraper(url)"]-->D[Will be stored in scrape_url];
+    D-->E["scrape_url.scrape_property_info()"];
+    E-->F["to_csv() "];
 ```
 
 ##  Usage
