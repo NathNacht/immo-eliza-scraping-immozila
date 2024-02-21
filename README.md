@@ -53,19 +53,20 @@ graph TD;
 The project involves discovering and saving the links to the locations of all properties in JSON files. Subsequently, each link undergoes thorough processing to extract the necessary information, which is then transformed into a DataFrame. Finally, the obtained information is written to a CSV file.
 
 ## Visuals
-
-Project Tree
-├── data
-│   ├── cleaned
-│   └── raw
-├── example_data
-├── scraper
-│   ├── scraper.py
-│   └── threathimmolinks.py
-├── .gitignore
-├── main.py
-├── README.md
-└── requirements.txt
+<code>
+    Project Tree
+    ├── data
+    │   ├── cleaned
+    │   └── raw
+    ├── example_data
+    ├── scraper
+    │   ├── scraper.py
+    │   └── threathimmolinks.py
+    ├── .gitignore
+    ├── main.py
+    ├── README.md
+    └── requirements.txt
+</code>
 
 
 ##  Contributors
