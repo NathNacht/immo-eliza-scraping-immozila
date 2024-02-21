@@ -54,18 +54,20 @@ The project involves discovering and saving the links to the locations of all pr
 
 ## Visuals
 <code>
-    Project Tree
-    ├── data
-    │   ├── cleaned
-    │   └── raw
-    ├── example_data
-    ├── scraper
-    │   ├── scraper.py
-    │   └── threathimmolinks.py
-    ├── .gitignore
-    ├── main.py
-    ├── README.md
-    └── requirements.txt
+    <ol>
+        Project Tree
+        ├── data
+        │   ├── cleaned
+        │   └── raw
+        ├── example_data
+        ├── scraper
+        │   ├── scraper.py
+        │   └── threathimmolinks.py
+        ├── .gitignore
+        ├── main.py
+        ├── README.md
+        └── requirements.txt
+    </ol>
 </code>
 
 
