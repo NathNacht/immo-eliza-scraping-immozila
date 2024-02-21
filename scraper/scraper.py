@@ -30,7 +30,7 @@ class PropertyScraper():
         
         # parse HTML content
         soup = BeautifulSoup(content, "html.parser")
-        
+        print(self.url)
         # find the script tags containing window.classified
         result_data = soup.find_all('script',attrs={"type" :"text/javascript"})
         window_classified_data = None
@@ -57,10 +57,13 @@ class PropertyScraper():
         """
         checks if property parameter is available or if property parameter is empty
         """
-        if data is None or data == "null":
+        try:
+            if data is None or data == "null":
+                return None
+            else:
+                return data
+        except:
             return None
-        else:
-            return data
 
 
     def _get_fully_equiped_kitchen(self, data):
@@ -109,12 +112,19 @@ class PropertyScraper():
         else:
             return None
 
+    def _clean_building(self, data, value):
+        if data == "None" or data is None:
+            return None
+        else:        
+            facade_count_value = data[value]
+            return facade_count_value
+
 
     def _check_sale(self, dictionary):
         """
         checks if property is for sale
         """
-        if dictionary["transaction"]["type"] == "FOR_SALE":
+        if dictionary["transaction"]["type"] == "FOR_SALE" and "building" in dictionary["property"]:
             return self._data_to_insert_in_dataframe(dictionary)
         
     def _data_to_insert_in_dataframe(self, data_dictionary):
@@ -138,9 +148,9 @@ class PropertyScraper():
                     "garden":self._convert_to_boolean(data_dictionary["property"]["hasGarden"]),
                     "garden_area":self._get_garden_surface(data_dictionary["property"]),
                     "surface_of_good":0,
-                    "nb_of_facades":self._clean_data(data_dictionary["property"]["building"]["facadeCount"]),
+                    "nb_of_facades":self._clean_building(data_dictionary["property"]["building"], "facadeCount"),
                     "swimming_pool":self._convert_to_boolean(data_dictionary["property"]["hasSwimmingPool"]),
-                    "state_of_building":self._clean_data(data_dictionary["property"]["building"]["condition"])
+                    "state_of_building":self._clean_building(data_dictionary["property"]["building"], "condition")
         }]
         
         return new_data
