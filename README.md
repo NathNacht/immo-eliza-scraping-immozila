@@ -54,7 +54,7 @@ The project involves discovering and saving the links to the locations of all pr
 
 ## Visuals
 <code>
-    <ol>
+<ol>
 Project Tree
 ├── data
 │   ├── cleaned
@@ -67,7 +67,7 @@ Project Tree
 ├── main.py
 ├── README.md
 └── requirements.txt
-    </ol>
+</ol>
 </code>
 
 
